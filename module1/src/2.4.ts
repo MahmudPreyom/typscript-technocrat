@@ -3,17 +3,24 @@
 
     // Interface - generic
 
-    interface Developer<T> {
+    interface Developer<T, X = null> {
         name: string;
         computer: {
             brand: string;
             model: string;
             releaseYear: number
         }
-        smartWatch: T
+        smartWatch: T;
+        bike?: X
     }
 
-    const poorDeveloper: Developer <object> = {
+    type EmilabWatch = {
+        brand: string;
+        model: string;
+        display: string;
+    }
+
+    const poorDeveloper: Developer<EmilabWatch> = {
         name: 'Preyom',
         computer: {
             brand: 'hp',
@@ -26,7 +33,15 @@
             display: 'OLED'
         }
     }
-    const richDeveloper : Developer <object> = {
+
+    interface AppleWatch {
+        brand: string;
+        model: string;
+        heartTrack: boolean;
+        sleepTrack: boolean
+    }
+
+    const richDeveloper: Developer<AppleWatch, undefined> = {
         name: 'Asad',
         computer: {
             brand: 'hp',
@@ -36,7 +51,8 @@
         smartWatch: {
             brand: 'Samsung',
             model: 'kw66',
-            display: 'OLED'
+            heartTrack: true,
+            sleepTrack: true
         }
     }
 
