@@ -29,7 +29,7 @@
     const res11 = createArrayWithTuple<string, { name: string }>("Bangladesh", { name: 'Asia' });
 
     const addCourseToStudent = <T>(student: T) => {
-        const couse = 'Next Level Web Development'
+        const course = 'Next Level Web Development'
         return {
             ...student,
             course
